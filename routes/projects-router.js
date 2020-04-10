@@ -24,15 +24,6 @@ router.get('/', (req, res) => {
 //   });
 // });
 
-router.get("/resources", (req, res) => {
-  Projects.get().then((resources) => {
-      res.status(200).json(resources)
-  })
-  .catch((err) => {
-      console.log(err);
-      res.status.apply(500).json({ errorMessage: "failed to get a list of resources from the data base" })
-  });
-});
 
 
 module.exports = router;
