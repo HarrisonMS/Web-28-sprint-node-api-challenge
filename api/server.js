@@ -1,11 +1,11 @@
 const express = require('express');
 const server = express();
 const helmet = require('helmet');
-const{ logger } = require('../data/helpers/logger')
+const{ loggerMid } = require('../data/helpers/loggerMid')
 const projectRouter = require('../routes/projects-router');
 
 server.use(helmet());
-server.use(logger)
+server.use(loggerMid)
 server.use(express.json());
 
 server.use('/api/projects', projectRouter)
