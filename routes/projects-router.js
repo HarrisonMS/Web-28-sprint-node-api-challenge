@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Projects = require('../data/helpers/projectModel')
 const { validatePostMid } = require('../data/helpers/validatePostMid')
-const { validatePutMid } = require('../data/helpers/validatePostMid')
+const { validatePutMid } = require('../data/helpers/validatePutMid')
 
 
 //gets all projects
@@ -62,7 +62,7 @@ router.put('/:id', validatePutMid, (req, res) => {
   Projects.update(id, putProj)
   .then(project => {
     project ? 
-    res.status(201).send({succes: true project}) : 
+    res.status(201).send(project) : 
     res.status(404).send(`idk`)  
   })
   .catch( error => {
