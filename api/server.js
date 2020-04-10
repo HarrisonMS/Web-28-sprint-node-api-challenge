@@ -1,7 +1,7 @@
 const express = require('express');
 const server = express();
 const helmet = require('helmet');
-const{ loggerMid } = require('../data/helpers/loggerMid')
+const { loggerMid } = require('../data/helpers/loggerMid')
 const projectRouter = require('../routes/projects-router');
 
 server.use(helmet());
